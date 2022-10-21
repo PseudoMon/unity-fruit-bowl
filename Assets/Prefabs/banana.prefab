@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2531010284059311351}
   - component: {fileID: 8256929644131046695}
   - component: {fileID: 3904671588440097281}
+  - component: {fileID: -1954082559445933894}
   m_Layer: 0
   m_Name: banana
   m_TagString: Fruit
@@ -114,3 +115,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014319027, y: 0.010550384, z: 0.014842821}
   m_Center: {x: -0.0012692912, y: 0.0009908597, z: 0}
+--- !u!114 &-1954082559445933894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544013140423370495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323bedae79b6e0847a46c5dbc2d35494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

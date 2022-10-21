@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject[] bombPrefabs;
     public GameObject[] fruitPrefabs;
     public bool isSpawning = true;
 
@@ -21,7 +23,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnRate);
-            GameObject prefabToUse = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
+            GameObject prefabToUse = bombPrefabs.Concat(fruitPrefabs).ToArray()[Random.Range(0, fruitPrefabs.Length)];
             Instantiate(
                 prefabToUse,
                 new Vector3(Random.Range(-xRange, xRange), ceiling, 0),

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8366065142532592294}
   - component: {fileID: 8776190451399977796}
   - component: {fileID: 9182082946507666696}
+  - component: {fileID: -7595726782540261278}
   m_Layer: 0
   m_Name: lemon
   m_TagString: Fruit
@@ -114,3 +115,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016436264, y: 0.012631238, z: 0.015860565}
   m_Center: {x: -0.00006829947, y: 0.00026103418, z: 0}
+--- !u!114 &-7595726782540261278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379817295226365070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323bedae79b6e0847a46c5dbc2d35494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/allstyles.uss?fileID=7433441132597879392&amp;guid=6c25b0a9e311643459639e3ce5655e08&amp;type=3#allstyles" />
+    <ui:Button text="Pause" display-tooltip-when-elided="true" name="PauseButton" style="width: auto; align-items: flex-end; position: absolute; top: 20px; left: auto; right: 20px; background-image: none; -unity-background-image-tint-color: rgb(255, 255, 255); -unity-font-style: bold; padding-left: 12px; padding-right: 12px; padding-top: 6px; padding-bottom: 6px;" />
+    <ui:VisualElement name="PauseMenu" class="pause-menu">
+        <ui:Button text="Continue" display-tooltip-when-elided="true" name="ContinueButton" />
+        <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" />
+    </ui:VisualElement>
+</ui:UXML>

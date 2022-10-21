@@ -6,6 +6,9 @@ public class BowlCollider : MonoBehaviour
 {
     [SerializeField]
     private Scoring scorer;
+
+    [SerializeField]
+    private LivesSystem lives;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,16 @@ public class BowlCollider : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Fruit"))
+        { 
+            scorer.AddScore(); 
+        }
+
+        if (other.gameObject.CompareTag("Bomb"))
+        {
+            lives.ReduceLife();
+        }
+
         Destroy(other.gameObject);
-        scorer.AddScore();
     }
 }

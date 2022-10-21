@@ -6,23 +6,63 @@ public class LivesSystem : MonoBehaviour
 {
     [SerializeField]
     private int initialLives = 3;
-    private int currentLives;
 
     [SerializeField]
     private GameObject prefabToUse;
 
-    void Create()
+    [SerializeField]
+    private Camera cam;
+
+    [SerializeField]
+    private GameObject gameOverScreen;
+
+    private int currentLives;
+    private List<GameObject> livesObjects = new List<GameObject>();
+
+    void Start()
     {
         currentLives = initialLives;
+
+        for (int i = 0; i < initialLives; i++)
+        {
+            GameObject newLifeIndicator = CreateLifeIndicator();
+            newLifeIndicator.transform.Translate(Vector3.forward * -1f * i);
+            livesObjects.Add(newLifeIndicator);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    GameObject CreateLifeIndicator()
     {
-        Instantiate(
+        Vector3 newPos = cam.ScreenToWorldPoint(
+            new Vector3(20, cam.pixelHeight - 50, 2.5f)
+        );
+
+        return Instantiate(
             prefabToUse,
-            new Vector3(Random.Range(-Constants.xRange, Constants.xRange), Constants.ceiling, 0),
+            newPos,
             prefabToUse.transform.rotation
         );
+    }
+
+    public void ReduceLife()
+    {
+        if (currentLives <= 0) return;
+
+        currentLives -= 1;
+        
+        int lastIndex = livesObjects.Count - 1;
+        Destroy(livesObjects[lastIndex]);
+        livesObjects.RemoveAt(livesObjects.Count - 1);
+
+        if (currentLives <= 0)
+        {
+            SetGameOverScreen();
+        }
+    }
+
+    public void SetGameOverScreen()
+    {
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 }
